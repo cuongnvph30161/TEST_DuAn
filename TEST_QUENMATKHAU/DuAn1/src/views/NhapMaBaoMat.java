@@ -12,10 +12,10 @@ import repositorys.EmailSender;
 
 public class NhapMaBaoMat extends javax.swing.JFrame {
 
-    public String email;
+    public static String email;
 
     public NhapMaBaoMat(String email) {
-      
+
         initComponents();
         setLocationRelativeTo(null);
         // Lưu giá trị email vào biến thành viên của lớp
@@ -145,7 +145,7 @@ public class NhapMaBaoMat extends javax.swing.JFrame {
     private void btnTiepTucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiepTucActionPerformed
         String ma = txtMaXacNhan.getText();
         CodeValidator codeValidator = new CodeValidator();
-        System.out.println("emailxb"+email);
+        System.out.println("emailxb" + email);
         // Kiểm tra mã xác nhận có khớp với mã đã gửi đi hay không
         if (codeValidator.validateCode(ma)) {
             // Mã xác nhận hợp lệ
@@ -158,33 +158,16 @@ public class NhapMaBaoMat extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTiepTucActionPerformed
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
-         new QuenMatKhau2().setVisible(true);
-         this.dispose();
+        new QuenMatKhau2().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnHuyActionPerformed
 
-   public static void main(String args[]) {
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                javax.swing.JTextField emailField = new javax.swing.JTextField();
-                javax.swing.JOptionPane.showOptionDialog(
-                        null,
-                        emailField,
-                        "Nhập email",
-                        javax.swing.JOptionPane.OK_CANCEL_OPTION,
-                        javax.swing.JOptionPane.PLAIN_MESSAGE,
-                        null,
-                        null,
-                        null
-                );
-
-                String email = emailField.getText();
-                if (email != null && !email.isEmpty()) {
-                    NhapMaBaoMat frame = new NhapMaBaoMat(email);
-                    frame.setVisible(true);
-                } else {
-                    // Xử lý khi người dùng không nhập email
-                }
+                NhapMaBaoMat nhapMaBaoMat = new NhapMaBaoMat(email);
+                nhapMaBaoMat.setVisible(true);
             }
         });
     }

@@ -19,13 +19,12 @@ public class QuenMatKhau2 extends javax.swing.JFrame {
 
     public INhanVienService nhanVienService = new NhanVienService();
     public ITaiKhoanService taiKhoanService = new TaiKhoanService();
-//    public String email;
+    public String email;
 
     public QuenMatKhau2() {
         initComponents();
         setLocationRelativeTo(null);
-        // Lưu giá trị email vào biến thành viên của lớp
-//        this.email = email;
+
     }
 
     @SuppressWarnings("unchecked")
@@ -148,16 +147,8 @@ public class QuenMatKhau2 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-//                String email = ""; // Khởi tạo giá trị email rỗng
-                // Kiểm tra nếu chạy chương trình với tham số dòng lệnh
-//                if (args.length > 0) {
-//                    email = args[0]; // Lấy giá trị email từ tham số dòng lệnh
-//                }
-//                System.out.println("check main"+" "+ email);
-                // Tạo và hiển thị giao diện QuenMatKhau2
                 QuenMatKhau2 quenMatKhau2 = new QuenMatKhau2();
                 quenMatKhau2.setVisible(true);
-//                quenMatKhau2.txtEmail.setText(email); // Lưu giá trị email vào txtEmail
             }
         });
     }

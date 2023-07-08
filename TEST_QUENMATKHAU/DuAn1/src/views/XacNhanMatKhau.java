@@ -16,7 +16,7 @@ public class XacNhanMatKhau extends javax.swing.JFrame {
     public INhanVienService nhanVienService = new NhanVienService();
     public ITaiKhoanService taiKhoanService = new TaiKhoanService();
 
-    private String email;
+    private static String email;
 
     public XacNhanMatKhau(String email) {
         initComponents();
@@ -152,28 +152,12 @@ public class XacNhanMatKhau extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                javax.swing.JTextField emailField = new javax.swing.JTextField();
-                javax.swing.JOptionPane.showOptionDialog(
-                        null,
-                        emailField,
-                        "Nhập email",
-                        javax.swing.JOptionPane.OK_CANCEL_OPTION,
-                        javax.swing.JOptionPane.PLAIN_MESSAGE,
-                        null,
-                        null,
-                        null
-                );
-
-                String email = emailField.getText();
-                if (email != null && !email.isEmpty()) {
-                    XacNhanMatKhau frame = new XacNhanMatKhau(email);
-                    frame.setVisible(true);
-                } else {
-                    // Xử lý khi người dùng không nhập email
-                }
+                XacNhanMatKhau xacNhanMatKhau = new XacNhanMatKhau(email);
+                xacNhanMatKhau.setVisible(true);
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHuy;
